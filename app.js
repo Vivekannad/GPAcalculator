@@ -3,7 +3,7 @@ let semesters = [];
 let currentSection = 'gpa';
 // JavaScript
 let currentRating = 0;
-const FEEDBACK_TIME = 30000;
+const FEEDBACK_TIME = 50000;
 
 const modal = document.getElementById('feedbackModal');
 const stars = document.querySelectorAll('.rating span i');
