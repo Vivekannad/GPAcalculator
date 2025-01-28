@@ -93,7 +93,8 @@ The application includes a built-in feedback system that appears periodically. U
 - Font Awesome for the icons
 - Formspree for the feedback form handling
 
-## deployment link : [gpa-calculator](https://vivekannad.github.io/GPAcalculator/)
+## deployment link : 
+[gpa-calculator](https://vivekannad.github.io/GPAcalculator/)
 
 ## Demo
 ![picture](<Screenshot 2025-01-28 205423.png>)
