@@ -88,10 +88,6 @@ The application includes a built-in feedback system that appears periodically. U
 - Provide detailed feedback
 - Submit suggestions for improvements
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🙏 Acknowledgments
 
 - Font Awesome for the icons
