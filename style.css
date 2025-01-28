@@ -9,6 +9,7 @@ body {
     background: #f0f2f5;
     padding: 2rem;
     min-height: 100vh;
+    position: relative;
 }
 
 .container {
@@ -18,6 +19,8 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
@@ -161,6 +164,188 @@ button:hover {
 }
 
 
+/*CSS*/
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.feedback-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-container.show .modal {
+    transform: scale(1);
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#feedbackForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.rating {
+    /* margin: 15px 0; */
+    
+    display: flex;
+    justify-content: center;
+}
+
+.rating span {
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.2s ease;
+}
+
+.rating span:hover,
+.rating span.active {
+    color: #ffd700;
+}
+
+textarea {
+    width: 90%;
+    min-height: 100px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-size: 14px;
+     margin: 10px 0; 
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+button[type="submit"] {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #1976D2;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close:hover {
+    color: #333;
+}
+
+#toastBox {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 30px;
+    bottom: 50%;
+    z-index: 1002;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #fff1ff;
+    /* width: 200px; */
+    /* height: 80px; */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px 20px;
+    /* margin: 5px 0; */
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.toast::after {
+    content: "";
+    background-color: #1a73e8;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: anim 3s linear forwards;
+}
+
+@keyframes anim {
+    100% {
+        width: 0;
+    }
+}
+
 
 /*Responsive Breakpoints*/
 
@@ -173,6 +358,7 @@ button:hover {
     h1 {
         font-size: 2rem;
     }
+    
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -199,6 +385,10 @@ button:hover {
     
     .cgpa-form-group {
         flex-direction: column;
+    }
+    #toastBox {
+        right: 30%;
+        top: 15px;
     }
 }
 
@@ -232,6 +422,7 @@ button:hover {
     .course-item button {
         align-self: flex-end;
     }
+   
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -305,3 +496,6 @@ button:hover {
         font-size: 0.85rem;
     }
 }
+
+
+

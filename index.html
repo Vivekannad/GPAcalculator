@@ -9,7 +9,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="manifest" href="./favicon_io/site.webmanifest"></head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <body>
     <div class="container">
         <h1>GPA & CGPA Calculator</h1>
         
@@ -71,6 +73,28 @@
                 Your CGPA: <span id="cgpa">0.00</span>
             </div>
         </div>
+    </div>
+
+    <div class="modal-container">
+        <div class="modal" id="feedbackModal">
+            <span class="close" onclick="closeFeedback()">&times;</span>
+            <h3 class="feed">Your satisfaction matters to us.</h3>
+            <form id="feedbackForm" action="https://formspree.io/f/xzzdrbna" method="POST">
+                <div class="rating" >
+                    <span onclick="rate(1)"><i class="fa-regular fa-star"></i></span>
+                    <span onclick="rate(2)"><i class="fa-regular fa-star"></i></span>
+                    <span onclick="rate(3)"><i class="fa-regular fa-star"></i></span>
+                    <span onclick="rate(4)"><i class="fa-regular fa-star"></i></span>
+                    <span onclick="rate(5)"><i class="fa-regular fa-star"></i></span>
+                    <input type="hidden" name="rating" id="ratingValue" required>
+                </div>
+                <textarea  placeholder="Your Feedback..." required name="suggestion"></textarea>
+                <button type="submit" id="submit-btn">Submit</button>
+                <input type="text" name="_gotcha" style="display:none">
+            </form>
+        </div>
+    </div>
+    <div id="toastBox">
     </div>
 
     <script src="./app.js"></script>
