@@ -234,13 +234,14 @@ document.getElementById('feedbackForm').addEventListener('submit', async (e) => 
     const form = e.target;
     const rating = form.querySelector('#ratingValue').value;
     const message = form.querySelector("textarea");
-    resetForm(message);
+    
 
     const formData = new FormData();
     formData.append("rating", rating);
     formData.append("message", message.value);
     feedbackInterval = true;
 
+    resetForm(message);
     try {
         const response = await fetch(form.action, {
             method: 'POST',
